@@ -48,17 +48,17 @@ $$
 R_{\rm valley} = f\left( P,\, F_{\rm inc},\, M_\star,\, [\mathrm{Fe/H}],\, T_{\rm eff},\, {\rm Age} \right)
 $$
 
-| Symbol | Quantity |
-|---|---|
-| $R_{\rm valley}$ | characteristic radius of the population gap |
-| $P$ | planetary orbital period |
-| $F_{\rm inc}$ | incident stellar flux |
-| $M_\star$ | stellar mass |
-| $[\mathrm{Fe/H}]$ | stellar metallicity |
-| $T_{\rm eff}$ | stellar effective temperature |
-| Age | stellar age |
+| Symbol            | Quantity                                    |
+| ----------------- | ------------------------------------------- |
+| $R_{\rm valley}$  | characteristic radius of the population gap |
+| $P$               | planetary orbital period                    |
+| $F_{\rm inc}$     | incident stellar flux                       |
+| $M_\star$         | stellar mass                                |
+| $[\mathrm{Fe/H}]$ | stellar metallicity                         |
+| $T_{\rm eff}$     | stellar effective temperature               |
+| Age               | stellar age                                 |
 
-Rather than asking only *whether* the radius valley exists, this project investigates **how its position and morphology change across different planetary and stellar environments.**
+Rather than asking only _whether_ the radius valley exists, this project investigates **how its position and morphology change across different planetary and stellar environments.**
 
 ---
 
@@ -124,19 +124,19 @@ The figures below are **not** pulled from any paper's plots, nor from a live arc
 
 ## Observational Dataset
 
-The primary dataset is the **NASA Exoplanet Archive Planetary Systems Composite Parameters (`PSCompPars`) table**, the archive's recommended table for statistical population studies (superseding the retired legacy *Confirmed Planets* table).
+The primary dataset is the **NASA Exoplanet Archive Planetary Systems Composite Parameters (`PSCompPars`) table**, the archive's recommended table for statistical population studies (superseding the retired legacy _Confirmed Planets_ table).
 
-| Quantity | Symbol | Unit |
-|---|---:|---:|
-| Planet radius | $R_p$ | $R_\oplus$ |
-| Planet mass | $M_p$ | $M_\oplus$ |
-| Orbital period | $P$ | days |
-| Semi-major axis | $a$ | AU |
-| Stellar mass | $M_\star$ | $M_\odot$ |
-| Stellar radius | $R_\star$ | $R_\odot$ |
-| Stellar temperature | $T_{\rm eff}$ | K |
-| Stellar metallicity | $[\mathrm{Fe/H}]$ | dex |
-| Stellar age | $t_\star$ | Gyr |
+| Quantity            |            Symbol |       Unit |
+| ------------------- | ----------------: | ---------: |
+| Planet radius       |             $R_p$ | $R_\oplus$ |
+| Planet mass         |             $M_p$ | $M_\oplus$ |
+| Orbital period      |               $P$ |       days |
+| Semi-major axis     |               $a$ |         AU |
+| Stellar mass        |         $M_\star$ |  $M_\odot$ |
+| Stellar radius      |         $R_\star$ |  $R_\odot$ |
+| Stellar temperature |     $T_{\rm eff}$ |          K |
+| Stellar metallicity | $[\mathrm{Fe/H}]$ |        dex |
+| Stellar age         |         $t_\star$ |        Gyr |
 
 > **Data integrity principle:** no numerical population figure in this repository will be presented as an observational result unless it can be regenerated from the documented data query and analysis pipeline. Figures 1–4 above are explicitly flagged as illustrations, not results, until the live pipeline runs.
 
@@ -152,13 +152,13 @@ $$
 
 ## Statistical Framework
 
-| Stage | Goal |
-|---|---|
-| **I. Descriptive** | characterize $p(R_p, P)$ for the observed sample |
-| **II. Valley estimation** | fit $R_{\rm valley}(P)$ (e.g. via the Gap-Bin or SVM methods used in the literature) |
-| **III. Environmental dependence** | fit $R_{\rm valley} = f(P, F_{\rm inc}, M_\star, [\rm Fe/H], T_{\rm eff}, t_\star)$ |
-| **IV. Uncertainty propagation** | incorporate measurement errors in $R_p$, $M_\star$, $a$, etc. |
-| **V. Model comparison** | compare photoevaporation vs. core-powered mass loss vs. gas-poor formation using formal statistical criteria, not visual agreement |
+| Stage                             | Goal                                                                                                                               |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **I. Descriptive**                | characterize $p(R_p, P)$ for the observed sample                                                                                   |
+| **II. Valley estimation**         | fit $R_{\rm valley}(P)$ (e.g. via the Gap-Bin or SVM methods used in the literature)                                               |
+| **III. Environmental dependence** | fit $R_{\rm valley} = f(P, F_{\rm inc}, M_\star, [\rm Fe/H], T_{\rm eff}, t_\star)$                                                |
+| **IV. Uncertainty propagation**   | incorporate measurement errors in $R_p$, $M_\star$, $a$, etc.                                                                      |
+| **V. Model comparison**           | compare photoevaporation vs. core-powered mass loss vs. gas-poor formation using formal statistical criteria, not visual agreement |
 
 ---
 
@@ -289,29 +289,29 @@ The stack is intentionally modular so statistical models can be swapped without 
 
 ## Key Literature
 
-| Paper | Key result used here |
-|---|---|
-| [Fulton et al. 2017, AJ 154, 109](https://arxiv.org/abs/1703.10375) | First high-significance detection of the bimodal radius gap (peaks $\sim1.3$, $\sim2.4\,R_\oplus$; gap $1.5$–$2.0\,R_\oplus$) using CKS spectroscopic stellar radii |
-| [Van Eylen et al. 2018, MNRAS 479, 4786](https://arxiv.org/abs/1710.05398) | Asteroseismic confirmation; valley slope $\gamma = -0.09^{+0.02}_{-0.04}$ in $R\propto P^\gamma$ |
-| [Martinez et al. 2019, ApJ 881, 19](https://arxiv.org/abs/1903.00174) | Valley slope in flux space, $d\log R_{\rm valley}/d\log F_{\rm inc}=+0.12\pm0.02$; CKS stellar/planetary parameter re-derivation |
-| [Owen & Wu 2013, ApJ 775, 105](https://arxiv.org/abs/1303.3899) / [2017, ApJ 847, 29](https://arxiv.org/abs/1705.10810) | Photoevaporation model predictions for the valley |
-| [Lopez & Fortney 2013, ApJ 776, 2](https://arxiv.org/abs/1311.0329) | Envelope mass-loss models linking $R_p$, $F_{\rm inc}$, and age |
-| [Ginzburg, Schlichting & Sari 2018, MNRAS 476, 759](https://arxiv.org/abs/1801.06740) | Core-powered mass-loss mechanism |
-| [Gupta & Schlichting 2019, MNRAS 487, 24](https://arxiv.org/abs/1811.03202) | Core-powered mass-loss population predictions, incl. slope estimates |
-| [Petigura et al. 2022, AJ 163, 179 (CKS X)](https://arxiv.org/abs/2201.08370) | Stellar-mass dependence, $R_{\rm valley}\propto M_\star^{0.23\pm0.04}$, and separate super-Earth / sub-Neptune $M_\star$ scaling |
-| [Berger et al. 2020, AJ 160, 108 (CKS VII)](https://arxiv.org/abs/2005.14671) | Gaia DR2 stellar radii; confirms and refines the $M_\star$-dependence of the gap |
-| [Ho & Van Eylen 2023, MNRAS 519, 4056](https://arxiv.org/abs/2301.04062) | Deeper valley from Kepler short-cadence photometry; slope $-0.096^{+0.023}_{-0.027}$ |
-| [Rogers, Owen & collaborators, e.g. Rogers et al. 2021](https://arxiv.org/abs/2007.11006) | Framework for population-level model comparison between photoevaporation and core-powered mass loss |
+| Paper                                                                                                                   | Key result used here                                                                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Fulton et al. 2017, AJ 154, 109](https://arxiv.org/abs/1703.10375)                                                     | First high-significance detection of the bimodal radius gap (peaks $\sim1.3$, $\sim2.4\,R_\oplus$; gap $1.5$–$2.0\,R_\oplus$) using CKS spectroscopic stellar radii |
+| [Van Eylen et al. 2018, MNRAS 479, 4786](https://arxiv.org/abs/1710.05398)                                              | Asteroseismic confirmation; valley slope $\gamma = -0.09^{+0.02}_{-0.04}$ in $R\propto P^\gamma$                                                                    |
+| [Martinez et al. 2019, ApJ 881, 19](https://arxiv.org/abs/1903.00174)                                                   | Valley slope in flux space, $d\log R_{\rm valley}/d\log F_{\rm inc}=+0.12\pm0.02$; CKS stellar/planetary parameter re-derivation                                    |
+| [Owen & Wu 2013, ApJ 775, 105](https://arxiv.org/abs/1303.3899) / [2017, ApJ 847, 29](https://arxiv.org/abs/1705.10810) | Photoevaporation model predictions for the valley                                                                                                                   |
+| [Lopez & Fortney 2013, ApJ 776, 2](https://arxiv.org/abs/1311.0329)                                                     | Envelope mass-loss models linking $R_p$, $F_{\rm inc}$, and age                                                                                                     |
+| [Ginzburg, Schlichting & Sari 2018, MNRAS 476, 759](https://arxiv.org/abs/1801.06740)                                   | Core-powered mass-loss mechanism                                                                                                                                    |
+| [Gupta & Schlichting 2019, MNRAS 487, 24](https://arxiv.org/abs/1811.03202)                                             | Core-powered mass-loss population predictions, incl. slope estimates                                                                                                |
+| [Petigura et al. 2022, AJ 163, 179 (CKS X)](https://arxiv.org/abs/2201.08370)                                           | Stellar-mass dependence, $R_{\rm valley}\propto M_\star^{0.23\pm0.04}$, and separate super-Earth / sub-Neptune $M_\star$ scaling                                    |
+| [Berger et al. 2020, AJ 160, 108 (CKS VII)](https://arxiv.org/abs/2005.14671)                                           | Gaia DR2 stellar radii; confirms and refines the $M_\star$-dependence of the gap                                                                                    |
+| [Ho & Van Eylen 2023, MNRAS 519, 4056](https://arxiv.org/abs/2301.04062)                                                | Deeper valley from Kepler short-cadence photometry; slope $-0.096^{+0.023}_{-0.027}$                                                                                |
+| [Rogers, Owen & collaborators, e.g. Rogers et al. 2021](https://arxiv.org/abs/2007.11006)                               | Framework for population-level model comparison between photoevaporation and core-powered mass loss                                                                 |
 
 **Slope predictions by mechanism** (from the compilation in [Rogers et al. 2020, ApJ 947, L19](https://arxiv.org/abs/1912.02170)), where $d\log r_p/d\log P$ and $d\log r_p/d\log F$ describe how the valley moves:
 
-| Mechanism | $d\log r_p/d\log P$ | $d\log r_p/d\log F$ |
-|---|---:|---:|
-| Gas-poor formation | $+0.11$ | $-0.08$ |
-| Photoevaporation | $-0.15$ | $+0.11$ |
-| Core-powered mass loss | $-0.13$ | $+0.10$ |
-| Impact erosion | $-0.33$ | $+0.25$ |
-| **Observed (Sun-like hosts)** | $-0.09$ to $-0.11$ | $+0.12$ |
+| Mechanism                     | $d\log r_p/d\log P$ | $d\log r_p/d\log F$ |
+| ----------------------------- | ------------------: | ------------------: |
+| Gas-poor formation            |             $+0.11$ |             $-0.08$ |
+| Photoevaporation              |             $-0.15$ |             $+0.11$ |
+| Core-powered mass loss        |             $-0.13$ |             $+0.10$ |
+| Impact erosion                |             $-0.33$ |             $+0.25$ |
+| **Observed (Sun-like hosts)** |  $-0.09$ to $-0.11$ |             $+0.12$ |
 
 Distinguishing these mechanisms — and testing whether more than one operates in different regimes — is the empirical target of Stage V of the [Statistical Framework](#statistical-framework).
 
@@ -319,18 +319,18 @@ Distinguishing these mechanisms — and testing whether more than one operates i
 
 ## Research Status
 
-| Component | Status |
-|---|---|
-| Research question | 🟢 Defined |
-| Repository architecture | 🟢 Defined |
-| Literature review | 🟡 In progress |
-| Data pipeline | 🟡 In progress |
-| Radius-valley baseline | 🔴 Pending |
-| Irradiation analysis | 🔴 Pending |
-| Stellar dependence | 🔴 Pending |
-| Statistical model | 🔴 Pending |
-| Mass-loss comparison | 🔴 Pending |
-| Manuscript | 🔴 Pending |
+| Component               | Status         |
+| ----------------------- | -------------- |
+| Research question       | 🟢 Defined     |
+| Repository architecture | 🟢 Defined     |
+| Literature review       | 🟡 In progress |
+| Data pipeline           | 🟡 In progress |
+| Radius-valley baseline  | 🔴 Pending     |
+| Irradiation analysis    | 🔴 Pending     |
+| Stellar dependence      | 🔴 Pending     |
+| Statistical model       | 🔴 Pending     |
+| Mass-loss comparison    | 🔴 Pending     |
+| Manuscript              | 🔴 Pending     |
 
 ---
 
