@@ -45,16 +45,7 @@ This project treats the radius valley as a **multidimensional population phenome
 ## Research Question
 
 $$
-R_{\rm valley}
-=
-f\left(
-P,\,
-F_{\rm inc},\,
-M_\star,\,
-[\mathrm{Fe/H}],\,
-T_{\rm eff},\,
-{\rm Age}
-\right)
+R_{\rm valley} = f\left( P,\, F_{\rm inc},\, M_\star,\, [\mathrm{Fe/H}],\, T_{\rm eff},\, {\rm Age} \right)
 $$
 
 | Symbol | Quantity |
